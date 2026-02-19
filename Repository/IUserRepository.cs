@@ -8,10 +8,10 @@ namespace GameTracker.Repository
 
         public void UpdateUser(int userId, User userUpdated);
 
-        public void DeleteUser();
+        public void DeleteUser(int userId);
 
         public List<User> GetAllUsers();
 
-        public User GetUserById(int id);
+        public User GetUserById(int userId);
     }
 }
