@@ -34,7 +34,10 @@ namespace GameTracker.Repository
             if (_playSession == null)
                 throw new Exception("Cant add a NULL play session.");
             else
-                context.playSessions.Add(_playSession);
+            {
+                context.playSessions.AddRange(_playSession);
+                context.SaveChanges();
+            }
         }
 
         public void Add(List<PlaySession> _playSessions)
@@ -42,7 +45,10 @@ namespace GameTracker.Repository
             if (_playSessions == null)
                 throw new Exception("Cant add a NULL list of play sessions.");
             else
+            {
                 context.playSessions.AddRange(_playSessions);
+                context.SaveChanges();
+            }
         }
 
         public void Update(int _ID, PlaySession _playSession)

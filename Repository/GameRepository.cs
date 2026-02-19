@@ -35,7 +35,10 @@ namespace GameTracker.Repository
             if (_game == null)
                 throw new Exception("Cant add a NULL game.");
             else
+            {
                 context.games.Add(_game);
+                context.SaveChanges();
+            }
         }
 
         public void Add(List<Game> _games)
@@ -43,7 +46,10 @@ namespace GameTracker.Repository
             if (_games == null)
                 throw new Exception("Cant add a NULL list of games.");
             else
+            {
                 context.games.AddRange(_games);
+                context.SaveChanges();
+            }
         }
 
         public void Delete(int _ID)

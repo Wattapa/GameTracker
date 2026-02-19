@@ -34,7 +34,10 @@ namespace GameTracker.Repository
             if (_category == null)
                 throw new Exception("Cant add a NULL category.");
             else
-                context.categories.Add(_category);
+            {
+                context.categories.Add(toDelete);
+                context.SaveChanges();
+            }
         }
 
         public void Add(List<Category> _categories)
@@ -42,7 +45,10 @@ namespace GameTracker.Repository
             if (_categories == null)
                 throw new Exception("Cant add a NULL list of category.");
             else
+            {
                 context.categories.AddRange(_categories);
+                context.SaveChanges();
+            }
         }
 
         public void Update(int _ID, Category _category)

@@ -34,7 +34,10 @@ namespace GameTracker.Repository
             if (_studio == null)
                 throw new Exception("Cant add a NULL studio.");
             else
-                context.studios.Add(_studio);
+            {
+                context.studios.AddRange(_studio);
+                context.SaveChanges();
+            }
         }
 
         public void Add(List<Studio> _studios)
@@ -42,7 +45,10 @@ namespace GameTracker.Repository
             if (_studios == null)
                 throw new Exception("Cant add a NULL list of studios.");
             else
+            {
                 context.studios.AddRange(_studios);
+                context.SaveChanges();
+            }
         }
 
         public void Update(int _ID, Studio _studio)
