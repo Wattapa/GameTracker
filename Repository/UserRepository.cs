@@ -44,7 +44,7 @@ namespace GameTracker.Repository
 
         public void DeleteUser(int userId)
         {
-            User userToDelete = dbContext.users.FirstOrDefault(b => b.Id == userId);
+            User userToDelete = GetUserById(userId);
 
             if (userToDelete != null)
             {
@@ -64,7 +64,7 @@ namespace GameTracker.Repository
 
         public User GetUserById(int userId)
         {
-            var user = dbContext.users.AsNoTracking().FirstOrDefault(b => b.Id == userId);
+            var user = dbContext.users.FirstOrDefault(b => b.Id == userId);
 
 
             if (user != null)
@@ -79,7 +79,7 @@ namespace GameTracker.Repository
 
         public void UpdateUser(int userId, User userUpdated)
         {
-            var user = dbContext.users.FirstOrDefault(b => b.Id == userId);
+            var user = GetUserById(userId);
 
             if (user != null && userUpdated != null)
             {

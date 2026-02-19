@@ -92,13 +92,13 @@ if (repoGame.GetAll().FirstOrDefault() != null)
     //Batch Game
     List<Game> listOfGames = new List<Game> {
         new Game() { ID = 1, Title = "The Legend of Zelda: Breath of the Wild ", ReleaseYear = 2017, Categories = new List<Category> {rogueLikeCategorie, RPGCategorie}, Studios = new List<Studio> { nintendo } },
-        new Game() { ID = 2, Title = "The Last of Us", ReleaseYear = 2013, Categories = new List<Category> { FPSCategorie, bulletHellCategorie }, Studios = new List<Studio> { naughtyDog } },
+        new Game() { ID = 2, Title = "The Last of Us", ReleaseYear = 2013, Categories = new List<Category> { FPSCategorie, bulletHellCategorie }, Studios = new List<Studio> { naughtyDog }},
         new Game() { ID = 3, Title = "Tetris", ReleaseYear = 1985, Categories = new List<Category> { herosShooterCategorie, RPGCategorie}, Studios = new List<Studio> { ceGars } },
         new Game() { ID = 4, Title = "Bloodborne ", ReleaseYear = 2015, Categories = new List<Category> {rogueLikeCategorie, herosShooterCategorie }, Studios = new List<Studio> { fromSofware } },
         new Game() { ID = 5, Title = "The Witcher III: Wild Hunt", ReleaseYear = 2015, Categories = new List<Category> { FPSCategorie, RPGCategorie}, Studios = new List<Studio> { cdProjectRed } },
         new Game() { ID = 6, Title = "Mass Effect 2", ReleaseYear = 2010, Categories = new List<Category> { multijoueurCategorie, RPGCategorie}, Studios = new List<Studio> { bioware } },
         new Game() { ID = 7, Title = "Metal Gear Solid", ReleaseYear = 1998, Categories = new List<Category> {rogueLikeCategorie, FPSCategorie }, Studios = new List<Studio> { konami } },
-        new Game() { ID = 8, Title = "Portal 2", ReleaseYear = 2011, Categories = new List<Category> {rogueLikeCategorie, herosShooterCategorie }, Studios = new List<Studio> { valve } },
+        new Game() { ID = 8, Title = "Portal 2", ReleaseYear = 2011, Categories = new List<Category> {rogueLikeCategorie, herosShooterCategorie }, Studios = new List<Studio> { valve }  },
         new Game() { ID = 9, Title = "Dark Souls", ReleaseYear = 2011, Categories = new List<Category> { bulletHellCategorie, multijoueurCategorie }, Studios = new List<Studio> { fromSofware } }
     };
     repoGame.Add([.. listOfGames]);

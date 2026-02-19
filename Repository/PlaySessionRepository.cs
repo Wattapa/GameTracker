@@ -21,12 +21,12 @@ namespace GameTracker.Repository
 
         public PlaySession GetPlaySessionByID(int _ID)
         {
-            return context.playSessions.AsNoTracking().FirstOrDefault(g => g.ID == _ID);
+            return context.playSessions.FirstOrDefault(g => g.ID == _ID);
         }
 
         public List<PlaySession> GetAll()
         {
-            return context.playSessions.AsNoTracking().ToList();
+            return context.playSessions.AsNoTracking().Include(ps => ps.PlayedGame).Include(ps => ps.User).ToList();
         }
 
         public void Add(PlaySession _playSession)
@@ -53,7 +53,7 @@ namespace GameTracker.Repository
 
         public void Update(int _ID, PlaySession _playSession)
         {
-            PlaySession toUpdate = context.playSessions.FirstOrDefault(g => g.ID == _ID);
+            PlaySession toUpdate = GetPlaySessionByID(_ID);
 
             if (toUpdate == null)
                 throw new Exception("No game match the id " + _ID);
@@ -66,7 +66,7 @@ namespace GameTracker.Repository
 
         public void Delete(int _ID)
         {
-            PlaySession toDelete = context.playSessions.FirstOrDefault(g => g.ID == _ID);
+            PlaySession toDelete = GetPlaySessionByID(_ID);
 
             if (toDelete == null)
                 throw new Exception("No game match the id " + _ID);

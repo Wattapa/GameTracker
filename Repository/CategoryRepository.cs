@@ -21,7 +21,7 @@ namespace GameTracker.Repository
 
         public Category GetCategoryByID(int _ID)
         {
-            return context.categories.AsNoTracking().FirstOrDefault(g => g.Id == _ID);
+            return context.categories.FirstOrDefault(g => g.Id == _ID);
         }
 
         public List<Category> GetAll()
@@ -53,7 +53,7 @@ namespace GameTracker.Repository
 
         public void Update(int _ID, Category _category)
         {
-            Category toUpdate = context.categories.FirstOrDefault(g => g.Id == _ID);
+            Category toUpdate = GetCategoryByID(_ID);
 
             if (toUpdate == null)
                 throw new Exception("No category match the id " + _ID);
@@ -66,7 +66,7 @@ namespace GameTracker.Repository
 
         public void Delete(int _ID)
         {
-            Category toDelete = context.categories.FirstOrDefault(g => g.Id == _ID);
+            Category toDelete = GetCategoryByID(_ID);
 
             if (toDelete == null)
                 throw new Exception("No game match the id " + _ID);

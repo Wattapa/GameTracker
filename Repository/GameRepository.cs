@@ -22,12 +22,12 @@ namespace GameTracker.Repository
 
         public Game GetGameByID(int _ID)
         {
-            return context.games.AsNoTracking().FirstOrDefault(g => g.ID == _ID);
+            return context.games.FirstOrDefault(g => g.ID == _ID);
         }
 
         public List<Game> GetAll()
         {
-            return context.games.AsNoTracking().ToList();
+            return context.games.AsNoTracking().Include(g => g.Studios).Include(g => g.Categories).Include(g => g.PlaySessions).ToList();
         }
 
         public void Add(Game _game)
@@ -54,7 +54,7 @@ namespace GameTracker.Repository
 
         public void Delete(int _ID)
         {
-            Game toDelete = context.games.FirstOrDefault(g => g.ID == _ID);
+            Game toDelete = GetGameByID(_ID);
 
             if (toDelete == null)
                 throw new Exception("No game match the id "+ _ID);
@@ -67,7 +67,7 @@ namespace GameTracker.Repository
 
         public void Update(int _ID, Game _game)
         {
-            Game toUpdate = context.games.FirstOrDefault(g => g.ID == _ID);
+            Game toUpdate = GetGameByID(_ID);
 
             if (toUpdate == null)
                 throw new Exception("No game match the id " + _ID);
