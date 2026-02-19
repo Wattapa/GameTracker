@@ -22,5 +22,26 @@ namespace GameTracker.Tools
             currentContext.categories.ToList().ForEach((categ) => Console.WriteLine($"Category : {categ.Id} / {categ.Name} / GamesCount : {categ.GameCollection.Count}"));
 
         }
+
+        public static void DisplayGames(AppDbContext currentContext)
+        {
+            Console.WriteLine("Affichage des jeux");
+            currentContext.games.ToList().ForEach((game) => Console.WriteLine($"Game : {game.ID} : {game.Title}  Released : {game.ReleaseYear} by {game.Studios.Count} differents studios. Categories : {game.Categories.Count} | Played by {game.PlaySessions.Count} players "));
+
+        }
+
+        public static void DisplayStudio(AppDbContext currentContext)
+        {
+            Console.WriteLine("Affichage des Studios");
+            currentContext.studios.ToList().ForEach((studio) => Console.WriteLine($"Studio : {studio.ID} : {studio.Name} Games created : {studio.PublishedGames.Count} ! "));
+
+        }
+
+        public static void DisplayPlayedSessions(AppDbContext currentContext)
+        {
+            Console.WriteLine("Affichage des jeux joués");
+            currentContext.playSessions.ToList().ForEach((ps) => Console.WriteLine($"Game : {ps.ID} : {ps.User.Username}  has played : {ps.PlayedGame} for {ps.HoursPlayed} hours"));
+
+        }
     }
 }

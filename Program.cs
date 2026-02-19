@@ -104,8 +104,28 @@ if (repoGame.GetAll().FirstOrDefault() != null)
     repoGame.Add([.. listOfGames]);
 }
 
+if(repoPlaySession.GetAll().FirstOrDefault()!=null)
+{
+    Console.WriteLine("The database already contains data about playSession base");
+}
+else
+{
+    User joueur1 = repoUser.GetUserById(1);
+    User joueur2 = repoUser.GetUserById(2);
+    Game game1 = repoGame.GetGameByID(4);
+    Game game2 = repoGame.GetGameByID(8);
+    Game game3 = repoGame.GetGameByID(5);
 
-User? userUpdated = repoUser.GetUserById(2);
+    List<PlaySession> listOfPlayedsessions = new List<PlaySession> {
+        new PlaySession() { ID = 1, Date="15/05/2025", HoursPlayed=5, User=joueur1,PlayedGame=game1 },
+        new PlaySession() { ID = 1, Date="10/07/2024", HoursPlayed=30, User=joueur2,PlayedGame=game2 },
+        new PlaySession() { ID = 1, Date="15/05/2025", HoursPlayed=5, User=joueur1,PlayedGame=game3 },
+
+    };
+    repoPlaySession.Add([.. listOfPlayedsessions]);
+}
+
+    User? userUpdated = repoUser.GetUserById(2);
 if(userUpdated != null)
 {
     userUpdated.Username = "Jean Bas";
@@ -122,4 +142,7 @@ if(categoryUpdated != null)
 repoUser.DeleteUser(3);
 DisplayConsole.DisplayUsers(context);
 DisplayConsole.DisplayCategories(context);
+DisplayConsole.DisplayStudio(context);
+DisplayConsole.DisplayGames(context);
+DisplayConsole.DisplayPlayedSessions(context);
 
