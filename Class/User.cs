@@ -10,7 +10,7 @@ using GameTracker.Class;
 
 namespace GameTracker.Class
 {
-    internal class User
+    public class User
     {
         public int Id { get; set; }
 
