@@ -14,6 +14,11 @@ namespace GameTracker.Repository
     {
         private readonly AppDbContext context;
 
+        public CategoryRepository(AppDbContext _context)
+        {
+            context = _context;
+        }
+
         public Category GetCategoryByID(int _ID)
         {
             return context.categories.AsNoTracking().FirstOrDefault(g => g.Id == _ID);
