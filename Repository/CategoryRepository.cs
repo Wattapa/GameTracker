@@ -35,7 +35,7 @@ namespace GameTracker.Repository
                 throw new Exception("Cant add a NULL category.");
             else
             {
-                context.categories.Add(toDelete);
+                context.categories.Add(_category);
                 context.SaveChanges();
             }
         }
