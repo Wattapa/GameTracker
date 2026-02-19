@@ -11,8 +11,8 @@ namespace GameTracker.Class
         public int ID { get; set; }
         public string Date { get; set; } = "12/09/2003";
         public int HoursPlayed { get; set; }
-        public Game PlayedGame { get; set; }
-        public User User { get; set; }
+        public virtual Game PlayedGame { get; set; }
+        public virtual User User { get; set; }
 
     }
 }

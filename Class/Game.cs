@@ -17,11 +17,11 @@ namespace GameTracker.Class
         
         public int ReleaseYear { get; set; }
 
-        public List<Studio> Studios { get; set; } = new List<Studio>();
+        public virtual List<Studio> Studios { get; set; } = new List<Studio>();
 
-        public List<PlaySession> PlaySessions { get; set; } = new List<PlaySession>();
+        public virtual List<PlaySession> PlaySessions { get; set; } = new List<PlaySession>();
 
-        public List<Category> Categories { get; set; } = new List<Category>();
+        public virtual List<Category> Categories { get; set; } = new List<Category>();
 
     }
 }

@@ -17,7 +17,7 @@ namespace GameTracker.Class
         [MaxLength(100, ErrorMessage = "La longueur max de l'username de la catégorie ne doit pas dépasser de 100 caractères")]
         public string Username { get; set; }
 
-        public List<PlaySession> playedSession { get; set; } = new();
+        public virtual List<PlaySession> playedSession { get; set; } = new();
 
         public override string ToString()
         {

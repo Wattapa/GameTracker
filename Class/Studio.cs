@@ -15,6 +15,6 @@ namespace GameTracker.Class
         [MaxLength(100, ErrorMessage = "La longueur maximale ne doit pas dépasser 100 caractères")]
         public int Name { get; set; }
 
-        public List<Game> PublishedGames { get; set; } = new List<Game>();
+        public virtual List<Game> PublishedGames { get; set; } = new List<Game>();
     }
 }
