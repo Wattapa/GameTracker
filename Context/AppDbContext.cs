@@ -24,8 +24,8 @@ namespace GameTracker.Context
         {
             optionsBuilder
                 .UseSqlite("Data source=games.db")
-                .UseLazyLoadingProxies()
-                .LogTo(Console.WriteLine);
+                .UseLazyLoadingProxies();
+                //.LogTo(Console.WriteLine);
         }
     }
 }
