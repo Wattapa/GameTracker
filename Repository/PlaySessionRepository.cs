@@ -47,7 +47,7 @@ namespace GameTracker.Repository
 
         public void Update(int _ID, PlaySession _playSession)
         {
-            PlaySession toUpdate = GetPlaySessionByID(_ID);
+            PlaySession toUpdate = context.playSessions.FirstOrDefault(g => g.ID == _ID);
 
             if (toUpdate == null)
                 throw new Exception("No game match the id " + _ID);
@@ -60,7 +60,7 @@ namespace GameTracker.Repository
 
         public void Delete(int _ID)
         {
-            PlaySession toDelete = GetPlaySessionByID(_ID);
+            PlaySession toDelete = context.playSessions.FirstOrDefault(g => g.ID == _ID);
 
             if (toDelete == null)
                 throw new Exception("No game match the id " + _ID);

@@ -47,7 +47,7 @@ namespace GameTracker.Repository
 
         public void Update(int _ID, Studio _studio)
         {
-            Studio toUpdate = GetStudioByID(_ID);
+            Studio toUpdate = context.studios.FirstOrDefault(g => g.ID == _ID);
 
             if (toUpdate == null)
                 throw new Exception("No studio match the id " + _ID);
@@ -60,7 +60,7 @@ namespace GameTracker.Repository
 
         public void Delete(int _ID)
         {
-            Studio toDelete = GetStudioByID(_ID);
+            Studio toDelete = context.studios.FirstOrDefault(g => g.ID == _ID);
 
             if (toDelete == null)
                 throw new Exception("No studio match the id " + _ID);

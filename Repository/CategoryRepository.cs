@@ -47,7 +47,7 @@ namespace GameTracker.Repository
 
         public void Update(int _ID, Category _category)
         {
-            Category toUpdate = GetCategoryByID(_ID);
+            Category toUpdate = context.categories.FirstOrDefault(g => g.Id == _ID);
 
             if (toUpdate == null)
                 throw new Exception("No category match the id " + _ID);
@@ -60,7 +60,7 @@ namespace GameTracker.Repository
 
         public void Delete(int _ID)
         {
-            Category toDelete = GetCategoryByID(_ID);
+            Category toDelete = context.categories.FirstOrDefault(g => g.Id == _ID);
 
             if (toDelete == null)
                 throw new Exception("No game match the id " + _ID);

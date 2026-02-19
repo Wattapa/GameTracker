@@ -48,7 +48,7 @@ namespace GameTracker.Repository
 
         public void Delete(int _ID)
         {
-            Game toDelete = GetGameByID(_ID);
+            Game toDelete = context.games.FirstOrDefault(g => g.ID == _ID);
 
             if (toDelete == null)
                 throw new Exception("No game match the id "+ _ID);
@@ -61,7 +61,7 @@ namespace GameTracker.Repository
 
         public void Update(int _ID, Game _game)
         {
-            Game toUpdate = GetGameByID(_ID);
+            Game toUpdate = context.games.FirstOrDefault(g => g.ID == _ID);
 
             if (toUpdate == null)
                 throw new Exception("No game match the id " + _ID);
