@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GameTracker.Class
 {
-    class Game
+    public class Game
     {
         public int ID { get; set; }
 
