@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GameTracker.Repository
 {
-    internal interface ICategory
+    internal interface ICategoryRepository
     {
         public Category GetCategoryByID(int _ID);
         public List<Category> GetAll();
