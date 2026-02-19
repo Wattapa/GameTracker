@@ -14,7 +14,7 @@ namespace GameTracker.Class
         [MaxLength(100, ErrorMessage = "La longueur max du nom de la catégorie ne doit pas dépasser de 100 caractères")]
         public string Name { get; set; }
 
-        /* public virtual List<Game> GameCollection { get; set; } = new();*/
+         public virtual List<Game> GameCollection { get; set; } = new();
 
         public override string ToString()
         {
