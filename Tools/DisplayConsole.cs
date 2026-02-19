@@ -26,7 +26,17 @@ namespace GameTracker.Tools
         public static void DisplayGames(AppDbContext currentContext)
         {
             Console.WriteLine("Affichage des jeux");
-            currentContext.games.ToList().ForEach((game) => Console.WriteLine($"Game : {game.ID} : {game.Title}  Released : {game.ReleaseYear} by {game.Studios.Count} differents studios. Categories : {game.Categories.Count} | Played by {game.PlaySessions.Count} players "));
+            foreach (var game in currentContext.games)
+            {
+                var categories = string.Join(", ", game.Categories);
+                Console.WriteLine(
+                    $"Game: {game.ID} : {game.Title} " +
+                    $"Released: {game.ReleaseYear} " +
+                    $"by {game.Studios.Count} different studios. " +
+                    $"Categories: {categories} | " +
+                    $"Played by {game.PlaySessions.Count} players"
+                );
+            }
 
         }
 

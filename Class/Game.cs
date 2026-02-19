@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace GameTracker.Class
 {
@@ -22,6 +23,11 @@ namespace GameTracker.Class
         public virtual List<PlaySession> PlaySessions { get; set; } = new List<PlaySession>();
 
         public virtual List<Category> Categories { get; set; } = new List<Category>();
+
+        public override string ToString()
+        {
+            return $"Games {ID}|{Title} : {ReleaseYear}";
+        }
 
     }
 }
