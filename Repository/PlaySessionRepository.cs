@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace GameTracker.Repository
 {
-    class PlaySessionRepository : IPlaySessionRepository
+    public class PlaySessionRepository : IPlaySessionRepository
     {
         private readonly AppDbContext context;
 

@@ -11,7 +11,7 @@ using System.Xml.Linq;
 
 namespace GameTracker.Repository
 {
-    class GameRepository : IGameRepository
+    public class GameRepository : IGameRepository
     {
         private readonly AppDbContext context;
 
