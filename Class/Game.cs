@@ -20,5 +20,8 @@ namespace GameTracker.Class
         public List<Studio> Studios { get; set; } = new List<Studio>();
 
         public List<PlaySession> PlaySessions { get; set; } = new List<PlaySession>();
+
+        public List<Category> Categories { get; set; } = new()
+
     }
 }
