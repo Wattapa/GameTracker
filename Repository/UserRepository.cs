@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GameTracker.Repository
 {
-    internal class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
         private AppDbContext dbContext;
 

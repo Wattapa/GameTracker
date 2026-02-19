@@ -10,7 +10,7 @@ using System.Xml.Linq;
 
 namespace GameTracker.Repository
 {
-    class CategoryRepository : ICategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
         private readonly AppDbContext context;
 
