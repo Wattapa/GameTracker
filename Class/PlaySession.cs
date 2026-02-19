@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameTracker.Class
 {
-    class PlaySession
+    public class PlaySession
     {
         public int ID { get; set; }
         public string Date { get; set; } = "12/09/2003";
