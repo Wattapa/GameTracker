@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GameTracker.Context
 {
-    internal class AppDbContext : DbContext
+    public class AppDbContext : DbContext
     {
         public DbSet<Game> games { get; set; }
 
@@ -19,6 +19,13 @@ namespace GameTracker.Context
         public DbSet<PlaySession> playSessions { get; set; }
 
         public DbSet<Studio> studios { get; set; }
+        public AppDbContext(DbContextOptions optionsBuilder) : base()
+        {
+        }
+
+        public AppDbContext()
+        {
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

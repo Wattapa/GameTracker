@@ -15,9 +15,6 @@ CategoryRepository repoCateg = new CategoryRepository(context);
 context.Database.EnsureDeleted();
 context.Database.Migrate();
 
-repoUser.reset();
-repoUser.database();
-
 //Initialisation 
 if (repoUser.GetAllUsers().FirstOrDefault() != null)
 {
@@ -70,7 +67,7 @@ if(categoryUpdated != null)
     repoCateg.Update(categoryUpdated.Id, categoryUpdated);  
 }
 
-repoCateg.Delete(3);
+repoUser.DeleteUser(3);
 DisplayConsole.DisplayUsers(context);
 DisplayConsole.DisplayCategories(context);
 

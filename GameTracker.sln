@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTracker", "GameTracker.csproj", "{39A9755E-3A83-43A8-8E4F-270C6B199CD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTrackerUnitTests", "..\GameTrackerUnitTests\GameTrackerUnitTests.csproj", "{5E187B8F-4A1D-4CEF-9FEB-0D70E199DCA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{39A9755E-3A83-43A8-8E4F-270C6B199CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39A9755E-3A83-43A8-8E4F-270C6B199CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39A9755E-3A83-43A8-8E4F-270C6B199CD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E187B8F-4A1D-4CEF-9FEB-0D70E199DCA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E187B8F-4A1D-4CEF-9FEB-0D70E199DCA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E187B8F-4A1D-4CEF-9FEB-0D70E199DCA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E187B8F-4A1D-4CEF-9FEB-0D70E199DCA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
