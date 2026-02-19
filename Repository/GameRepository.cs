@@ -15,6 +15,11 @@ namespace GameTracker.Repository
     {
         private readonly AppDbContext context;
 
+        public GameRepository(AppDbContext _context)
+        {
+            context = _context;
+        }
+
         public Game GetGameByID(int _ID)
         {
             return context.games.AsNoTracking().FirstOrDefault(g => g.ID == _ID);
@@ -23,11 +28,6 @@ namespace GameTracker.Repository
         public List<Game> GetAll()
         {
             return context.games.AsNoTracking().ToList();
-        }
-
-        public GameRepository(AppDbContext _context)
-        {
-            context = _context;
         }
 
         public void Add(Game _game)
