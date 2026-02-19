@@ -13,6 +13,7 @@ namespace GameTracker.Class
     internal class User
     {
         public int Id { get; set; }
+
         [Required]
         [MaxLength(100, ErrorMessage = "La longueur max de l'username de la catégorie ne doit pas dépasser de 100 caractères")]
         public string Username { get; set; }

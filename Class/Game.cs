@@ -22,6 +22,5 @@ namespace GameTracker.Class
         public List<PlaySession> PlaySessions { get; set; } = new List<PlaySession>();
 
         public List<Category> Categories { get; set; } = new List<Category>();
-
     }
 }
